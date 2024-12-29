@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style-design.css">
+    <title>Developpement Web</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="aboutme.html">À propos</a></li>
+            <li><a href="../index.html#skills">Compétences</a></li>
+            <li><a href="../index.html#projects" class="active">Projets</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="intro">
+            <h1 class="dynamic-text">Mes projets en developpement web</h1>
+            <p>Voici quelques projets réaliser dans le cadre de ma formation mais aussi quelques productions personnel :</p>
+        </div>
+    </header>
+    <div id="wave-transition"></div>
+<div id="Main-Content">
+    <button id="resetCards" class="reset-button" style="display: none;">Revenir en arrière</button>
+  <section class="project-cards">
+      <div class="card card-1">
+        <img src="../images/Foodtruck.png" alt="Project 1">
+          <div class="card-content">
+              <h2>FoodTruck</h2>
+              <p>Lorem</p>
+          </div>
+      </div>
+      <div class="card card-2">
+       <img src="../images/Youniversitice.jpg" alt="Project 2">
+          <div class="card-content">
+              <h2>Cours en ligne</h2>
+              <p>Lorem</p>
+          </div>
+      </div>
+      <div class="card card-3">
+         <img src="../images/oculus.jpg" alt="Project 3">
+          <div class="card-content">
+              <h2>Oculus</h2>
+              <p>Lorem</p>
+          </div>
+      </div>
+      <div class="card card-4">
+      <img src="../images/dashboard.jpg" alt="Project 4">
+        <div class="card-content">
+            <h2>Dashboard</h2>
+            <p>Lorem</p>
+        </div>
+    </div>
+      
+  </section>
+  
+  <div class="project-content" id="content-1" style="display: none;">
+    <h2>FoodTruck</h2>
+    <img src="../images/Foodtruck.png" alt="">
+</div>
+<div class="project-content" id="content-2" style="display: none;">
+    <h2>Cours en ligne</h2>
+</div>
+<div class="project-content" id="content-3" style="display: none;">
+    <h2>Oculus</h2>
+</div>
+<div class="project-content" id="content-4" style="display: none;">
+    <h2>Dashboard</h2>
+</div>
+</div>
+  
+</div>
+  <footer>
+    <div class="footer-container">
+        <div class="social-media">
+            <a href="https://www.instagram.com/jarode_24" target="_blank" aria-label="Instagram">
+                <img src="../images/insta.png" alt="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/in/Jarode-Pottin" target="_blank" aria-label="LinkedIn">
+                <img src="../images/linkdin.png" alt="LinkedIn" />
+            </a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Jarode Pottin. Tous droits réservés.</p>
+        </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../script/gallery.js"></script>
+  <script>
+    document.addEventListener('mousemove', function(e) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            card.style.transform = `rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`;
+        });
+    });
+
+    document.addEventListener('mouseleave', function() {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    });
+  </script>
+</body>
+</html>

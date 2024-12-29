@@ -1,0 +1,132 @@
+/* Styles généraux */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2e2e2e;
+    color: #fff;
+    line-height: 1.6;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+nav {
+    background: #1e1e1e;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Cela centre les éléments horizontalement */
+    align-items: center;     /* Cela centre les éléments verticalement */
+    list-style-type: none;   /* Retire les puces */
+}
+
+nav ul li {
+    margin: 0 15px;          /* Ajoute de l'espace entre les éléments */
+}
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: #ff6347;
+    border-radius: 4px;
+}
+
+header {
+    background-color: #1e1e1e;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header .intro p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+#about-me {
+    padding: 40px 20px;
+    background-color: #2e2e2e;
+    text-align: center;
+}
+
+#about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+#about-me p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+#about-me img {
+    border-radius: 50%;
+    margin: 20px 0;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #ff6347;
+}
+
+#passions {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+
+#passions img {
+    width: 30px; /* Taille des icônes des réseaux sociaux */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#passions img:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+
+
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Adaptations pour les petits écrans */
+@media screen and (max-width: 768px) {
+    header .intro h1 {
+        font-size: 2rem;
+    }
+
+    #about-me p {
+        font-size: 1rem;
+    }
+}
+
+

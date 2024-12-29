@@ -1,0 +1,227 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+nav {
+    background: #1e1e1e;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Cela centre les éléments horizontalement */
+    align-items: center;     /* Cela centre les éléments verticalement */
+    list-style-type: none;   /* Retire les puces */
+}
+
+nav ul li {
+    margin: 0 15px;          /* Ajoute de l'espace entre les éléments */
+}
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: #ff6347;
+    border-radius: 4px;
+}
+
+header {
+    background-color: #1e1e1e;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-left: 5%;
+    border-radius: 30px;
+}
+
+header .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header .intro p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80vw; /* Largeur du carousel */
+    height: 60vh; /* Hauteur du carousel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Permet au reflet de dépasser */
+    perspective: 1500px; /* Augmenter la perspective pour éviter les images trop grandes */
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* Largeur dynamique */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); /* Angle initial pour une vue circulaire directe */
+    transition: transform 1s ease;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 180px; /* Taille des éléments */
+    height: 280px;
+    transform-origin: center center;
+    backface-visibility: hidden; /* Cache l'arrière des éléments */
+}
+
+/* Positionnement circulaire des items avec alignement centré */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(500px); }
+.carousel-item:nth-child(2) { transform: rotateY(72deg) translateZ(500px); }
+.carousel-item:nth-child(3) { transform: rotateY(144deg) translateZ(500px); }
+.carousel-item:nth-child(4) { transform: rotateY(216deg) translateZ(500px); }
+.carousel-item:nth-child(5) { transform: rotateY(288deg) translateZ(500px); }
+.carousel-item:nth-child(6) { transform: rotateY(288deg) translateZ(500px); }
+.carousel-item:nth-child(7) { transform: rotateY(288deg) translateZ(500px); }
+
+.carousel .carousel-item a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    text-indent: -9999px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: var(--image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: filter 0.5s ease;
+}
+
+/* Reflet des images au sol, qui dépasse la séparation */
+.carousel .carousel-item a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: var(--image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scaleY(-1);
+    opacity: 0.5; /* Augmenter l'opacité pour un reflet plus visible */
+    filter: blur(1.5px); /* Légère réduction du flou pour plus de clarté */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.081));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    z-index: 2; /* Permet au reflet de passer par-dessus la séparation */
+    transform-origin: center center;
+    top: 100%; /* Le reflet commence au bas de l'élément */
+    left: 0;
+    width: 100%;
+    height: 50%; /* Laisser dépasser le reflet */
+}
+
+/* Effet de survol sur l'image */
+.carousel-item:hover a {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+    transition: transform 0.6s ease;
+}
+
+
+/* Boutons de navigation */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.prev {
+    left: 40px;
+}
+
+.next {
+    right: 40px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1b1b1b; /* Couleur sombre pour correspondre au thème */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    position: absolute; /* Ajoutez cette ligne */
+    bottom: 0; /* Ajoutez cette ligne */
+    left: 0; /* Ajoutez cette ligne */
+    width: 100%; /* Ajoutez cette ligne */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px; /* Taille des icônes des réseaux sociaux */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+.copyright {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.copyright p {
+    margin: 0;
+}

@@ -1,0 +1,150 @@
+/* Style de base pour la galerie */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+nav {
+    background: #1e1e1e;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: #ff6347;
+    border-radius: 4px;
+}
+
+/* Titre de la galerie */
+.gallery-title {
+    text-align: center;
+    margin-top: 100px; /* Ajuste pour éviter la superposition avec la nav */
+    margin-bottom: 20px;
+}
+
+.gallery-title h1 {
+    font-size: 2.5rem;
+    color: #ff6347;
+}
+
+.gallery-title p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Styles de la galerie */
+
+
+/* Footer */
+footer {
+    background-color: #1b1b1b; /* Couleur sombre pour correspondre au thème */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px; /* Taille des icônes des réseaux sociaux */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+.copyright {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.copyright p {
+    margin: 0;
+}
+.project-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.1s, box-shadow 0.1s;
+    width: 250px; /* Reduced width */
+    height: 350px; /* Set height */
+    margin: 20px;
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 100%; /* Make image take up the whole card */
+    object-fit: cover; /* Ensure the image covers the card without distortion */
+    transition: transform 0.3s;
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.873); /* Semi-transparent background */
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+.card-content h2 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+.card-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.card img:hover {
+    transform: translateY(-5px) scale(1.1); /* Increase the scale to 1.1 for a larger hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

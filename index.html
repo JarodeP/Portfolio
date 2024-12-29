@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="burger-menu" id="burger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="#" id="scroll-to-top" class="active">Accueil</a></li>
+            <li><a href="pages/aboutme.html">À propos</a></li>
+            <li><a href="#séparateur">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <section id="top">
+
+        <div class="intro">
+            <h1 class="dynamic-text">Bonjour et bienvenue!</h1>
+            <p>Je suis Jarode Pottin, étudiant en MMI, passionné par le web, le design et la créativité numérique.
+                Découvrez mes compétences, mes projets et mon univers.</p>
+        </section>
+            <a href="#skills" class="btn">Voir mes compétences</a>
+        </div>
+        <!-- Bouton pour descendre doucement -->
+        <a href="#séparateur" class="scroll-down"></a>
+        <img src="images/img_pdp.png" alt="image de profil" id="PhotoPrinc">
+    </header>
+    <section id="séparateur"></section>
+<!-- Compétences -->
+<section id="skills">
+    <h2>Mes Compétences</h2>
+    <div class="skills-container">
+        <div class="skill-card">
+            <img src="images/html.png" alt="HTML5">
+            <h3>HTML5</h3>
+        </div>
+        <div class="skill-card">
+            <img src="images/css3.png" alt="CSS3">
+            <h3>CSS3</h3>
+        </div>
+        <div class="skill-card">
+            <img src="images/js.png" alt="JavaScript">
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+            <img src="images/threejs.png" alt="Three.js" >
+            <h3>Three.js</h3>
+        </div>
+        <div class="skill-card">
+            <img src="images/reactjs.png" alt="React.js" >
+            <h3>React.js</h3>
+        </div>
+    </div>
+</section>
+    
+
+    <!-- Projets avec des cartes -->
+    <section id="projects">
+        <br>
+        <h2>Mes différents projets</h2>
+        <div class="project-carousel">
+            <div class="card" onclick="location.href='pages/design.html'">
+                <img src="images/devweb.jpeg" alt="Projet 2">
+                <div class="card-content">
+                    <h3>Developpement Web</h3>
+                    <p>L'ensemble de mes projets liés au développement web</p>
+                </div>
+            </div>
+            <div class="card" onclick="location.href='pages/dev-web.html'">
+                <img src="images/iconographie1.png" alt="Projet 3">
+                <div class="card-content">
+                    <h3>Design</h3>
+                    <p>L'ensemble de mes projets liés au design</p>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section id="contact">
+    <br>
+        <h2>Contact</h2>
+        <form id="contact-form" action="PHP/contact.php" method="POST">
+            <div>
+                <label for="name-input">Nom:</label>
+                <input type="text" id="name-input" name="name" required>
+            </div>
+            <div>
+                <label for="email-input">Email:</label>
+                <input type="email" id="email-input" name="email" required>
+            </div>
+            <div>
+                <label for="message-input">Message:</label>
+                <textarea id="message-input" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </section>
+ <!-- Texte animé -->
+ <section id="animated-text" class="animated-text-section">
+    <h2 id="code-text"></h2>
+</section>
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <a href="https://www.instagram.com/jarode_24" target="_blank" aria-label="Instagram">
+                    <img src="images/insta.png" alt="Instagram" />
+                </a>
+                <a href="https://www.linkedin.com/in/Jarode-Pottin" target="_blank" aria-label="LinkedIn">
+                    <img src="images/linkdin.png" alt="LinkedIn" />
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Jarode Pottin. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de projets</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="aboutme.html">À propos</a></li>
+            <li><a href="../index.html#skills">Compétences</a></li>
+            <li><a href="../index.html#projects" class="active">Projets</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="gallery-title">
+        <h1>Mes Projets</h1>
+        <p>Explorez quelques-uns de mes travaux récents et de mes réalisations.</p>
+    </section>
+
+    <section class="project-cards">
+        <div class="card card-1">
+            <img src="../images/Affiche2.jpg" alt="Project 1">
+            <div class="card-content">
+                <h2>Projet 1</h2>
+                <p>Description du projet 1.</p>
+            </div>
+        </div>
+        <div class="card card-2">
+            <img src="../images/Affiche3.jpg" alt="Project 2">
+            <div class="card-content">
+                <h2>Projet 2</h2>
+                <p>Description du projet 2.</p>
+            </div>
+        </div>
+        <div class="card card-3">
+            <a href="Projet1.html"><img src="../images/Affiche1.jpg" alt="Project 3"></a>
+            <div class="card-content">
+                <h2>Projet 3</h2>
+                <p>Description du projet 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Jarode Pottin. Tous droits réservés.</p>
+        <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../script/gallery.js"></script>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                card.style.transform = `rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`;
+            });
+        });
+
+        document.addEventListener('mouseleave', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
